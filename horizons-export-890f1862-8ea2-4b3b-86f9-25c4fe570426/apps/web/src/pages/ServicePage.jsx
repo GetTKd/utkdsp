@@ -3,13 +3,9 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
-  HeartHandshake,
-  Sprout,
   GraduationCap,
-  Home,
   Recycle,
   HandPlatter,
-  Quote,
 } from 'lucide-react';
 import Reveal from '@/components/Reveal';
 import CountUp from '@/components/CountUp';
@@ -21,77 +17,37 @@ const SERVICE_HERO = 'https://images.hostinger.com/466f3899-b97c-46f3-a906-5db5a
 const INITIATIVES = [
   {
     icon: HandPlatter,
-    title: 'Second Harvest Food Bank',
-    text: 'Brothers sort, pack, and distribute meals for East Tennessee families facing food insecurity — our most consistent partnership.',
-    impact: '12,000+ meals packed',
+    title: 'Knox Area Rescue Ministries',
+    text: 'Brothers volunteer at KARM by serving meals to individuals experiencing homelessness and helping support those in need throughout the Knoxville community.',
+    impact: 'Community partnership',
   },
   {
     icon: Recycle,
-    title: 'River & Park Cleanups',
-    text: 'Along the Tennessee River and in city parks, brothers clear litter and restore trails that keep Knoxville green.',
-    impact: '30+ cleanup days',
+    title: 'Dear Jack Foundation',
+    text: 'Brothers came together to put on the Dash for Don, raising money through the Dear Jack Foundation to support adolescents and young adults impacted by cancer.',
+    impact: 'Dash for Don',
   },
   {
     icon: GraduationCap,
-    title: 'Youth Literacy & Mentorship',
-    text: 'Reading sessions and mentorship at local elementary schools, helping young students build confidence in the classroom.',
-    impact: '200+ students reached',
-  },
-  {
-    icon: Home,
-    title: 'Habitat for Humanity',
-    text: 'Framing, roofing, and finishing homes alongside future homeowners — turning sweat equity into safe, affordable housing.',
-    impact: '4 homes helped build',
-  },
-  {
-    icon: Sprout,
-    title: 'Campus & Community Drives',
-    text: 'Clothing, food, and supply drives each semester that route student generosity directly to Knoxville nonprofits.',
-    impact: '3,500+ items donated',
-  },
-  {
-    icon: HeartHandshake,
-    title: 'DSP National Philanthropy',
-    text: 'Annual participation in the fraternity’s national service initiatives, connecting Alpha Zeta to chapters coast to coast.',
-    impact: 'National partnership',
+    title: 'Keeping Knoxville Beautiful',
+    text: 'Brothers volunteer with Keep Knoxville Beautiful by participating in community cleanups and helping keep Knoxville clean and welcoming.',
+    impact: 'Community cleanups',
   },
 ];
 
 const IMPACT_STATS = [
-  { value: 2400, suffix: '+', label: 'Service hours logged this year' },
-  { value: 18, suffix: '', label: 'Local organizations partnered with' },
-  { value: 95, suffix: '%', label: 'Brothers who volunteer each semester' },
-  { value: 6, suffix: '', label: 'Annual service events hosted' },
+  { value: 650, suffix: '+', label: 'Service Hours Annually' },
+  { value: 5, suffix: '+', label: 'Service Events a Semester' },
+  { value: 8, suffix: '+', label: 'Local Community Partners' },
+  { value: 120000, suffix: '+', label: 'Total Service Hours in Alpha Zeta' },
 ];
 
 const GALLERY = [
-  { src: SERVICE_HERO, alt: 'Brothers packing boxes at a Knoxville food bank', span: 'lg:col-span-2 lg:row-span-2' },
-  { src: 'https://images.hostinger.com/295757a4-8070-4b9f-a5c8-f94f02daf732.png', alt: 'River and park cleanup along the Tennessee River', span: '' },
-  { src: 'https://images.hostinger.com/93b08bfb-0ab6-44e4-8ade-bdff8be915c9.png', alt: 'Reading to elementary school students in Knoxville', span: '' },
-  { src: 'https://images.hostinger.com/0cf16bd5-971e-426b-a02d-10fe1b3f443c.png', alt: 'Building a Habitat for Humanity house', span: '' },
-  { src: 'https://images.hostinger.com/c5b0d303-055d-4408-9b68-f35cbc599ba2.png', alt: 'Sorting donated clothing at a community center', span: '' },
-  { src: 'https://images.hostinger.com/82c2fb0f-09c9-45b9-9aa6-3ae6afdf7cf5.png', alt: 'Chapter group photo at a community service event', span: 'lg:col-span-2' },
-];
-
-const TESTIMONIALS = [
-  {
-    quote:
-      'Service in DSP stopped feeling like an obligation after my first food bank shift. You look around and realize the people next to you are the same ones pushing you in class — and together you are doing something that actually matters for Knoxville.',
-    name: 'Emma Carter',
-    role: 'VP of Brotherhood · Marketing, Class of 2027',
-  },
-  {
-    quote:
-      'Our Habitat build day was the moment I understood what brotherhood really means. We showed up at 7 a.m., worked until sundown, and not one person complained. That is the kind of people this chapter attracts.',
-    name: 'Daniel Kim',
-    role: 'Finance, Class of 2027',
-  },
-  {
-    quote:
-      'Reading with third graders every week reminded me why I came to college in the first place — to build something bigger than myself. DSP gave me the structure and the people to actually follow through on that.',
-    name: 'Maya Thompson',
-    role: 'Management, Class of 2028',
-  },
+  { src: '/donsign.JPEG', alt: 'Brothers volunteering at a community service event', span: 'lg:col-span-2' },
+  { src: '/purpleservice.JPEG', alt: 'Brothers serving the Knoxville community', span: 'lg:col-span-2' },
+  { src: '/soupkitch.JPEG', alt: 'Brothers volunteering at a soup kitchen', span: 'lg:col-span-2' },
+  { src: '/soupkitchnfinley.JPEG', alt: 'Finley volunteering at a soup kitchen', span: 'lg:col-span-2 lg:col-start-2' },
+  { src: '/trash.JPEG', alt: 'Brothers cleaning up litter in Knoxville', span: 'lg:col-span-2 lg:col-start-4' },
 ];
 
 const GET_INVOLVED = [
@@ -128,9 +84,9 @@ export default function ServicePage() {
 
       <PageHero
         label="Community Service"
-        title="Business With a Conscience."
-        subtitle="Service is one of DSP’s five pillars. Every semester, Alpha Zeta brothers give thousands of hours back to the city that gives us a home."
-        image={SERVICE_HERO}
+        title="Giving Back to Knoxville."
+        subtitle="Service is an important part of what we do in DSP. Throughout the semester, our brothers volunteer together with organizations across Knoxville and East Tennessee."
+        image="/Screenshot 2026-09-07 at 9.17.09 PM.png"
       />
 
       {/* Mission overview */}
@@ -140,7 +96,7 @@ export default function ServicePage() {
             <Reveal className="lg:col-span-5">
               <p className="section-label">Our Service Mission</p>
               <h2 className="mt-4 font-display text-4xl font-medium leading-[1.05] text-foreground md:text-5xl">
-                We Lead by Giving Back.
+                Service Beyond Ourselves.
               </h2>
             </Reveal>
             <Reveal delay={0.1} className="lg:col-span-7">
@@ -151,7 +107,7 @@ export default function ServicePage() {
                 our skills, time, and energy into measurable good.
               </p>
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-                Service is not a side project for us. It is woven into pledging, into chapter
+                Service is not a side project for us. It is woven into pledging, into biweekly chapter
                 meetings, and into the way brothers choose to spend their weekends. We measure our
                 impact in hours, in meals packed, and in the relationships we build with the
                 organizations doing this work year-round.
@@ -176,7 +132,7 @@ export default function ServicePage() {
               Where We Show Up.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              Long-term partnerships and recurring events — not one-off photo opportunities.
+            
             </p>
           </Reveal>
 
@@ -224,11 +180,11 @@ export default function ServicePage() {
           <Reveal className="max-w-2xl">
             <p className="section-label">In the Field</p>
             <h2 className="mt-4 font-display text-4xl font-medium leading-[1.05] text-foreground md:text-6xl">
-              Service, Not Selfies.
+              Our Brothers at Work.
             </h2>
           </Reveal>
 
-          <div className="mt-12 grid auto-rows-[220px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-6">
             {GALLERY.map((g, i) => (
               <Reveal
                 key={g.src}
@@ -239,41 +195,8 @@ export default function ServicePage() {
                   src={g.src}
                   alt={g.alt}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+                  className="aspect-[3/4] h-auto w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
                 />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="bg-secondary/40 py-24 md:py-32">
-        <div className="mx-auto max-w-[90rem] px-5 md:px-10">
-          <Reveal className="max-w-2xl">
-            <p className="section-label">Brothers on Service</p>
-            <h2 className="mt-4 font-display text-4xl font-medium leading-[1.05] text-foreground md:text-6xl">
-              Why It Matters to Us.
-            </h2>
-          </Reveal>
-
-          <div className="mt-14 grid gap-8 lg:grid-cols-3">
-            {TESTIMONIALS.map((t, i) => (
-              <Reveal
-                key={t.name}
-                delay={i * 0.08}
-                className="flex flex-col rounded-sm border border-border bg-card p-8"
-              >
-                <Quote className="h-7 w-7 text-gold" strokeWidth={1.5} />
-                <p className="mt-5 flex-1 text-base leading-relaxed text-foreground/90">
-                  “{t.quote}”
-                </p>
-                <div className="mt-6 border-t border-border pt-5">
-                  <p className="font-display text-lg font-medium text-foreground">{t.name}</p>
-                  <p className="mt-1 text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground">
-                    {t.role}
-                  </p>
-                </div>
               </Reveal>
             ))}
           </div>
@@ -335,12 +258,14 @@ export default function ServicePage() {
               >
                 Explore Recruitment
               </Link>
-              <Link
-                to="/contact"
+              <a
+                href={CONTACT.instagram}
+                target="_blank"
+                rel="noreferrer"
                 className="cta-arrow-light"
               >
-                Ask Us About Service <ArrowRight className="h-4 w-4" strokeWidth={2} />
-              </Link>
+                Message Us on Instagram <ArrowRight className="h-4 w-4" strokeWidth={2} />
+              </a>
             </div>
           </Reveal>
         </div>

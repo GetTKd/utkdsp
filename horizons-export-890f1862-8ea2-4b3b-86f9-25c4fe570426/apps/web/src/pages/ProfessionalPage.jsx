@@ -3,23 +3,23 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Briefcase, Mic, FileText, Users, MessageSquare, Compass } from 'lucide-react';
 import Reveal from '@/components/Reveal';
-import CountUp from '@/components/CountUp';
 import PageHero from '@/components/PageHero';
-import { IMAGES, EMPLOYERS, MEMBERS } from '@/data/chapter';
+import { IMAGES } from '@/data/chapter';
 
 const PROGRAMS = [
-  { icon: Mic, title: 'Corporate Speaker Series', text: 'Executives and alumni from Fortune 500 companies share how they got there — and how you can too.' },
-  { icon: Users, title: 'Networking Nights', text: 'Structured evenings with recruiters and professionals, built for real conversations, not business-card collecting.' },
-  { icon: FileText, title: 'Resume & LinkedIn Workshops', text: 'Line-by-line reviews from brothers who have landed the internships you are applying for.' },
-  { icon: MessageSquare, title: 'Interview Preparation', text: 'Mock behavioral and technical interviews with honest feedback before the real thing.' },
-  { icon: Compass, title: 'Mentorship', text: 'Big-little pairings and alumni mentors who answer the questions you cannot ask a recruiter.' },
-  { icon: Briefcase, title: 'Leadership Development', text: 'Committee chairs and executive roles where you lead real budgets, events, and teams.' },
+  { icon: Mic, title: 'Professional Speakers', text: 'Hear directly from alumni, recruiters, and professionals across different industries.' },
+  { icon: Users, title: 'Networking Opportunities', text: 'Build connections with professionals, alumni, and fellow brothers.' },
+  { icon: FileText, title: 'Resume & LinkedIn Workshops', text: 'Get feedback and practical advice to strengthen how you present yourself professionally.' },
+  { icon: MessageSquare, title: 'Interview Preparation', text: 'Practice answering interview questions and get advice from brothers who have been through the process.' },
+  { icon: Compass, title: 'Brother-to-Brother Mentorship', text: 'Learn from older brothers about internships, classes, recruiting, and everything in between.' },
+  { icon: Briefcase, title: 'Leadership Experience', text: 'Take on real responsibility through committees, events, and executive positions.' },
 ];
 
-const OUTCOME_STATS = [
-  { value: 94, suffix: '%', label: 'Brothers with internships by junior year' },
-  { value: 120, suffix: '+', label: 'Internships & full-time placements' },
-  { value: 40, suffix: '+', label: 'Companies hiring Alpha Zeta brothers' },
+const CAREER_SPOTLIGHT_IMAGES = [
+  { src: '/transcard.JPEG', name: 'Finley Roland', role: 'Transcard Intern', location: 'Chattanooga, TN' },
+  { src: '/owen.JPEG', name: 'Owen Zerega', role: 'PepsiCo Intern', location: 'Knoxville, TN' },
+  { src: '/ross.JPEG', name: 'Anna Swisher', role: 'Ross Stores Inc. Intern', location: 'New York City, NY' },
+  { src: '/michelin.JPEG', name: 'Zach Jones', role: 'Michelin Intern', location: 'Greenville, SC', objectPosition: '35% center' },
 ];
 
 export default function ProfessionalPage() {
@@ -36,8 +36,8 @@ export default function ProfessionalPage() {
       <PageHero
         label="Professional Development"
         title="Careers Are Built Here."
-        subtitle="From the first resume workshop to the signed offer letter — DSP turns ambition into outcomes."
-        image={IMAGES.speaker}
+        subtitle="From building your first resume to landing an internship, DSP gives you the people, experience, and resources to take the next step."
+        image={IMAGES.corporate}
       />
 
       {/* Programs */}
@@ -46,7 +46,7 @@ export default function ProfessionalPage() {
           <Reveal className="max-w-2xl">
             <p className="section-label">What We Do</p>
             <h2 className="mt-4 font-display text-4xl font-medium leading-[1.05] text-foreground md:text-6xl">
-              Professional Growth, Every Week.
+              Professional Development in Action.
             </h2>
           </Reveal>
           <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
@@ -61,55 +61,27 @@ export default function ProfessionalPage() {
         </div>
       </section>
 
-      {/* Photo band */}
-      <section className="grid md:grid-cols-2">
-        {[IMAGES.networking, IMAGES.workshop].map((img, i) => (
-          <div key={img} className="group overflow-hidden">
-            <img
-              src={img}
-              alt={i === 0 ? 'Brothers networking with corporate partners' : 'A resume workshop with a mentor'}
-              loading="lazy"
-              className="aspect-[3/2] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-            />
-          </div>
-        ))}
-      </section>
-
-      {/* Career outcomes */}
+      {/* Employer speaker series */}
       <section className="bg-plum-deep py-24 md:py-32">
-        <div className="mx-auto max-w-[90rem] px-5 md:px-10">
-          <Reveal className="max-w-2xl">
-            <p className="section-label">Career Outcomes</p>
-            <h2 className="mt-4 font-display text-4xl font-medium leading-[1.05] text-cream md:text-6xl">
-              Where Brothers Go.
-            </h2>
-          </Reveal>
-
-          <div className="mt-14 grid gap-10 md:grid-cols-3">
-            {OUTCOME_STATS.map((s, i) => (
-              <Reveal key={s.label} delay={i * 0.08} className="border-l-2 border-gold pl-6">
-                <p className="font-display text-5xl font-medium text-cream md:text-6xl">
-                  <CountUp value={s.value} suffix={s.suffix} />
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-cream/65">{s.label}</p>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal className="mt-16">
-            <p className="text-xs font-semibold tracking-[0.25em] uppercase text-cream/50">
-              Recent internship & full-time employers
-            </p>
-            <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-7 sm:grid-cols-3 lg:grid-cols-6">
-              {EMPLOYERS.map((e) => (
-                <p
-                  key={e}
-                  className="text-center font-display text-lg font-medium text-cream/70 transition-colors hover:text-gold"
-                >
-                  {e}
-                </p>
-              ))}
+        <div className="mx-auto grid max-w-[90rem] items-center gap-12 px-5 md:grid-cols-[1fr_1.1fr] md:gap-16 md:px-10">
+          <Reveal>
+            <div className="overflow-hidden rounded-sm">
+              <img
+                src="/21st.JPEG"
+                alt="21st Mortgage employer speaker series"
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover"
+              />
             </div>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <p className="section-label">Beyond the Classroom</p>
+            <h2 className="mt-4 font-display text-4xl font-medium leading-[1.05] text-cream md:text-6xl">
+              Employer Speaker Series
+            </h2>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-cream/75">
+              Throughout the semester, we invite employers to speak with our brothers about their industries, career paths, and opportunities within their companies. Last semester, 21st Mortgage joined us to share career advice and discuss internship and full-time opportunities, giving brothers the chance to ask questions and make connections directly with their team.
+            </p>
           </Reveal>
         </div>
       </section>
@@ -128,25 +100,23 @@ export default function ProfessionalPage() {
               Start Your Story <ArrowRight className="h-4 w-4" strokeWidth={2} />
             </Link>
           </Reveal>
-          <div className="mt-14 grid gap-x-5 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-            {MEMBERS.slice(0, 3).map((m, i) => (
-              <Reveal key={m.name} delay={i * 0.08}>
-                <div className="group relative overflow-hidden rounded-sm">
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {CAREER_SPOTLIGHT_IMAGES.map((image, i) => (
+              <Reveal key={image.src} delay={i * 0.08}>
+                <div className="group">
                   <img
-                    src={m.image}
-                    alt={m.name}
+                    src={image.src}
+                    alt={`${image.name}, ${image.role}, ${image.location}`}
                     loading="lazy"
-                    className="aspect-[3/4] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    style={{ objectPosition: image.objectPosition || 'center' }}
+                    className="aspect-[3/4] w-full rounded-sm object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-plum-deep/90 via-transparent to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-6">
-                    <p className="font-display text-xl font-medium text-cream">{m.name}</p>
-                    <p className="mt-1 text-xs font-semibold tracking-[0.15em] uppercase text-gold">
-                      {m.role}
+                  <div className="mt-4">
+                    <p className="font-display text-xl font-medium text-foreground">{image.name}</p>
+                    <p className="mt-1 text-xs font-semibold tracking-[0.15em] uppercase text-gold-dark">
+                      {image.role}
                     </p>
-                    <p className="mt-1 text-sm text-cream/70">
-                      {m.major} · Class of {m.year}
-                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">{image.location}</p>
                   </div>
                 </div>
               </Reveal>

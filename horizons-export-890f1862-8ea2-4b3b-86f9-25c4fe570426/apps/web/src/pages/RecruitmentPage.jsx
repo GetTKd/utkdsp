@@ -11,18 +11,11 @@ import {
 } from '@/components/ui/accordion';
 import { IMAGES, RECRUITMENT_EVENTS, FAQS, CONTACT } from '@/data/chapter';
 
-const WHY = [
-  { image: IMAGES.networking, title: 'Build Your Career', text: 'Internship pipelines, resume workshops, and interview prep that turn applications into offers.' },
-  { image: IMAGES.leadership, title: 'Become a Leader', text: 'Lead committees, run events, and hold real responsibility from your first semester.' },
-  { image: IMAGES.brotherhood, title: 'Find Your Community', text: 'A co-ed brotherhood of driven students who make a big campus feel like home.' },
-  { image: IMAGES.speaker, title: 'Create Your Network', text: '300,000+ DSP alumni worldwide — starting with the brothers in the room beside you.' },
-];
-
 const STEPS = [
-  { n: '01', title: 'Learn', text: 'Come to Info Night and hear what DSP is really about — no pressure, no commitment.' },
-  { n: '02', title: 'Connect', text: 'Meet brothers at open events and coffee chats. Ask anything. Be yourself.' },
-  { n: '03', title: 'Apply', text: 'Submit the short interest form so we can get to know you and keep you updated.' },
-  { n: '04', title: 'Interview', text: 'A relaxed conversation with chapter leadership about your goals and what you are looking for.' },
+  { n: '01', title: 'Learn', text: 'Come to recruitment events to meet our brothers, learn what we do, and see what being part of DSP is actually like.' },
+  { n: '02', title: 'Connect', text: 'Meet and network with brothers during and after events. Ask anything and be yourself. We want to get to know you!' },
+  { n: '03', title: 'Apply', text: 'Submit the application form sent out in the Group Me so we can get to know you and keep you updated.' },
+  { n: '04', title: 'Interview', text: 'Selected candidates are invited to interview with chapter members to share more about themselves, their goals, and what they hope to gain from DSP.' },
   { n: '05', title: 'Find Your Place', text: 'Receive a bid, join a pledge class, and start the semester that changes your college experience.' },
 ];
 
@@ -40,8 +33,9 @@ export default function RecruitmentPage() {
       {/* Hero */}
       <section className="relative flex min-h-[85dvh] items-center overflow-hidden">
         <img
-          src={IMAGES.recruitment}
+          src="/recheader.jpg"
           alt="Students connecting at a DSP recruitment event on the UTK campus"
+          style={{ objectPosition: '75% center' }}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-plum-deep/65" />
@@ -53,19 +47,21 @@ export default function RecruitmentPage() {
               Your Next Chapter Starts Here.
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-cream/80 md:text-lg">
-              Recruitment is a two-way conversation — you get to know us, we get to know you. No
-              experience required. Every major welcome.
+              Recruitment is a two-way conversation for students enrolled in the Haslam College of
+              Business at UTK. Every Haslam major is welcome.
             </p>
             <p className="mt-6 inline-block border-b-2 border-vol pb-1 text-xs font-semibold tracking-[0.25em] uppercase text-cream/85">
               Fall 2026 Recruitment
             </p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-              <Link
-                to="/contact"
+              <a
+                href={CONTACT.instagram}
+                target="_blank"
+                rel="noreferrer"
                 className="rounded-sm bg-gold px-8 py-4 text-center text-xs font-bold tracking-[0.2em] uppercase text-plum-deep transition-all duration-300 hover:bg-gold-light active:scale-[0.98]"
               >
-                Apply / Interest Form
-              </Link>
+                Message Us on Instagram
+              </a>
               <a
                 href="#schedule"
                 className="rounded-sm border border-cream/50 px-8 py-4 text-center text-xs font-bold tracking-[0.2em] uppercase text-cream transition-all duration-300 hover:border-gold hover:text-gold active:scale-[0.98]"
@@ -77,59 +73,6 @@ export default function RecruitmentPage() {
         </div>
       </section>
 
-      {/* Why DSP */}
-      <section className="bg-background py-24 md:py-32">
-        <div className="mx-auto max-w-[90rem] px-5 md:px-10">
-          <Reveal className="max-w-2xl">
-            <p className="section-label">Why DSP?</p>
-            <h2 className="mt-4 font-display text-4xl font-medium leading-[1.05] text-foreground md:text-6xl">
-              Four Reasons. One Decision.
-            </h2>
-          </Reveal>
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {WHY.map((w, i) => (
-              <Reveal key={w.title} delay={i * 0.07}>
-                <div className="group">
-                  <div className="overflow-hidden rounded-sm">
-                    <img
-                      src={w.image}
-                      alt={w.title}
-                      loading="lazy"
-                      className="aspect-[3/2] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
-                    />
-                  </div>
-                  <h3 className="mt-5 font-display text-xl font-medium text-foreground">{w.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{w.text}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How recruitment works */}
-      <section className="bg-plum-deep py-24 md:py-32">
-        <div className="mx-auto max-w-[90rem] px-5 md:px-10">
-          <Reveal className="max-w-2xl">
-            <p className="section-label">How Recruitment Works</p>
-            <h2 className="mt-4 font-display text-4xl font-medium leading-[1.05] text-cream md:text-6xl">
-              Five Steps. Two Weeks.
-            </h2>
-          </Reveal>
-          <div className="mt-14 grid gap-10 md:grid-cols-5 md:gap-6">
-            {STEPS.map((s, i) => (
-              <Reveal key={s.n} delay={i * 0.08} className="relative border-t border-plum-light pt-6">
-                <p className="font-display text-4xl font-medium text-gold">{s.n}</p>
-                <h3 className="mt-3 text-sm font-bold tracking-[0.15em] uppercase text-cream">
-                  {s.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-cream/65">{s.text}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Schedule */}
       <section id="schedule" className="bg-cream py-24 md:py-32">
         <div className="mx-auto max-w-[90rem] px-5 md:px-10">
@@ -137,12 +80,12 @@ export default function RecruitmentPage() {
             <div>
               <p className="section-label">Recruitment Schedule</p>
               <h2 className="mt-4 font-display text-4xl font-medium text-foreground md:text-6xl">
-                Fall 2026 Events.
+                Fall 2026 Events
               </h2>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-              All events are open to every UTK student unless marked invite-only. Dates subject to
-              change — follow @utkdsp for updates.
+              Stay in the loop! Follow @UTKDSP on Instagram for the latest recruitment updates and event details. 
+             
             </p>
           </Reveal>
           <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -174,13 +117,36 @@ export default function RecruitmentPage() {
         </div>
       </section>
 
+      {/* How recruitment works */}
+      <section className="bg-plum-deep py-24 md:py-32">
+        <div className="mx-auto max-w-[90rem] px-5 md:px-10">
+          <Reveal className="max-w-2xl">
+            <p className="section-label">How Recruitment Works</p>
+            <h2 className="mt-4 font-display text-4xl font-medium leading-[1.05] text-cream md:text-6xl">
+              What To Expect.
+            </h2>
+          </Reveal>
+          <div className="mt-14 grid gap-10 md:grid-cols-5 md:gap-6">
+            {STEPS.map((s, i) => (
+              <Reveal key={s.n} delay={i * 0.08} className="relative border-t border-plum-light pt-6">
+                <p className="font-display text-4xl font-medium text-gold">{s.n}</p>
+                <h3 className="mt-3 text-sm font-bold tracking-[0.15em] uppercase text-cream">
+                  {s.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-cream/65">{s.text}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Additional info */}
       <section className="bg-background py-24 md:py-32">
         <div className="mx-auto grid max-w-[90rem] gap-14 px-5 md:px-10 lg:grid-cols-3">
           {[
             {
               title: 'Eligibility',
-              items: ['Enrolled at UTK (any major, any year)', 'Interest in business and leadership', 'Able to attend at least two open events', 'Good academic standing'],
+              items: ['Enrolled at UTK in the Haslam College of Business', 'Interest in business and leadership', 'Able to attend scheduled recruitment events', 'Good academic standing'],
             },
             {
               title: 'What We Look For',
@@ -188,7 +154,7 @@ export default function RecruitmentPage() {
             },
             {
               title: 'What to Wear',
-              items: ['Open events: business casual', 'Panel & interviews: business professional', 'Socials: come as you are', 'When in doubt — ask us'],
+              items: ['Casual, everyday attire unless specified otherwise', 'Professional event: a suit or blazer with dress pants or a professional skirt, a button-down or blouse, and dress shoes', 'When in doubt, ask us'],
             },
           ].map((col, i) => (
             <Reveal key={col.title} delay={i * 0.08}>
@@ -251,12 +217,14 @@ export default function RecruitmentPage() {
               Ready to Take the Next Step?
             </h2>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                to="/contact"
+              <a
+                href={CONTACT.instagram}
+                target="_blank"
+                rel="noreferrer"
                 className="w-full rounded-sm bg-gold px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase text-plum-deep transition-all duration-300 hover:bg-gold-light active:scale-[0.98] sm:w-auto"
               >
-                Apply Now
-              </Link>
+                Message Us on Instagram
+              </a>
               <a
                 href={`mailto:${CONTACT.recruitment.email}`}
                 className="w-full rounded-sm border border-cream/50 px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase text-cream transition-all duration-300 hover:border-gold hover:text-gold active:scale-[0.98] sm:w-auto"

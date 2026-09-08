@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Linkedin, Mail, MapPin } from 'lucide-react';
+import { Instagram, Linkedin, MapPin } from 'lucide-react';
 import { CONTACT } from '@/data/chapter';
 
 const NAV = [
@@ -10,7 +10,6 @@ const NAV = [
   { to: '/service', label: 'Community Service' },
   { to: '/recruitment', label: 'Recruitment' },
   { to: '/alumni', label: 'Alumni & Partners' },
-  { to: '/contact', label: 'Contact' },
 ];
 
 export default function Footer() {
@@ -53,8 +52,8 @@ export default function Footer() {
           <div>
             <p className="text-xs font-semibold tracking-[0.25em] uppercase text-gold">Recruitment</p>
             <p className="mt-5 text-sm leading-relaxed text-cream/75">
-              Interested in joining? Recruitment opens at the start of each fall and spring
-              semester.
+              Students enrolled in the Haslam College of Business at UTK are invited to join.
+              Recruitment opens at the start of each fall and spring semester.
             </p>
             <Link
               to="/recruitment"
@@ -66,13 +65,6 @@ export default function Footer() {
 
           <div>
             <p className="text-xs font-semibold tracking-[0.25em] uppercase text-gold">Connect</p>
-            <a
-              href={`mailto:${CONTACT.email}`}
-              className="mt-5 flex items-center gap-2 text-sm text-cream/75 transition-colors hover:text-gold"
-            >
-              <Mail className="h-4 w-4 text-gold" strokeWidth={1.75} />
-              {CONTACT.email}
-            </a>
             <div className="mt-5 flex gap-3">
               <a
                 href={CONTACT.instagram}

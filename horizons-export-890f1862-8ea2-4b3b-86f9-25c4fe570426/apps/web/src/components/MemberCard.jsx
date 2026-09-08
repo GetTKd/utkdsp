@@ -1,7 +1,7 @@
 import React from 'react';
 import { Linkedin } from 'lucide-react';
 
-export default function MemberCard({ member, showPosition = false }) {
+export default function MemberCard({ member, showPosition = false, nameClassName = 'text-lg' }) {
   return (
     <div className="group">
       <div className="relative overflow-hidden rounded-sm bg-secondary">
@@ -9,13 +9,19 @@ export default function MemberCard({ member, showPosition = false }) {
           src={member.image}
           alt={member.name}
           loading="lazy"
-          className="aspect-[3/4] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+          style={{ objectPosition: member.imagePosition || 'center' }}
+          className={`aspect-[3/4] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] ${member.imageScale || (member.zoom ? 'scale-[1.02]' : '')}`}
         />
         <div className="absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 bg-gold transition-transform duration-500 group-hover:scale-x-100" />
       </div>
       <div className="mt-4 flex items-start justify-between gap-3">
         <div>
-          <h3 className="font-display text-lg font-medium leading-snug text-foreground">
+          {member.roleFirst && member.role && (
+            <p className="mb-1 text-xs font-semibold tracking-[0.12em] uppercase text-gold-dark">
+              {member.role}
+            </p>
+          )}
+          <h3 className={`font-display ${nameClassName} font-medium leading-snug text-foreground`}>
             {member.name}
           </h3>
           {showPosition && member.position && (
@@ -24,9 +30,11 @@ export default function MemberCard({ member, showPosition = false }) {
             </p>
           )}
           <p className="mt-1 text-sm text-muted-foreground">
-            {member.major} · Class of {member.year}
+            {member.major}
+            {member.minor && ` · Minor: ${member.minor}`}
+            {` · Class of ${member.year}`}
           </p>
-          {member.role && <p className="mt-0.5 text-sm text-muted-foreground">{member.role}</p>}
+          {member.role && !member.roleFirst && <p className="mt-0.5 text-sm text-muted-foreground">{member.role}</p>}
           {member.company && (
             <p className="mt-0.5 text-sm text-muted-foreground">
               {member.position && !showPosition ? `${member.position}, ` : ''}
@@ -35,7 +43,7 @@ export default function MemberCard({ member, showPosition = false }) {
           )}
         </div>
         <a
-          href="https://linkedin.com"
+          href={member.linkedin || 'https://www.linkedin.com/in/delta-sigma-pi-alpha-zeta/'}
           target="_blank"
           rel="noreferrer"
           aria-label={`${member.name} on LinkedIn`}

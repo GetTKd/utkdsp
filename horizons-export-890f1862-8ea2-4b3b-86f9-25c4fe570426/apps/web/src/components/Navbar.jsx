@@ -12,7 +12,6 @@ const LINKS = [
   { to: '/service', label: 'Service' },
   { to: '/recruitment', label: 'Recruitment' },
   { to: '/alumni', label: 'Alumni & Partners' },
-  { to: '/contact', label: 'Contact' },
 ];
 
 export default function Navbar() {

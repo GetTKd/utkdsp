@@ -8,10 +8,10 @@ import MemberCard from '@/components/MemberCard';
 import { IMAGES, MEMBERS } from '@/data/chapter';
 
 const TRADITIONS = [
-  { image: IMAGES.gameday, title: 'Gamedays on Rocky Top', text: 'Tailgates, checkerboard end zones, and 100,000 of our closest friends.' },
-  { image: IMAGES.brotherhood, title: 'Formals & Socials', text: 'Semi-formals in the fall, formal in the spring, and plenty in between.' },
-  { image: IMAGES.service, title: 'Service in Knoxville', text: 'Philanthropy weeks and community partnerships across the city we call home.' },
-  { image: IMAGES.networking, title: 'Chapter Retreats & Trips', text: 'Fall retreats in the Smokies and road trips to regional conferences.' },
+  { image: '/gameday.JPEG', title: 'Gamedays on Rocky Top', text: 'Tailgates, checkerboard end zones, and 100,000 of our closest friends.' },
+  { image: '/formal.JPEG', title: 'Formals & Socials', text: 'Semi-formals in the fall, formal in the spring, and plenty in between.' },
+  { image: '/purpleservice.JPEG', title: 'Service in Knoxville', text: 'Philanthropy weeks and community partnerships across the city we call home.' },
+  { image: '/Screenshot 2026-09-07 at 10.56.55 PM.png', title: 'Chapter Retreats & Trips', text: 'Getting off campus for nature retreats, trips with brothers, and everything in between.' },
 ];
 
 export default function BrothersPage() {
@@ -28,7 +28,7 @@ export default function BrothersPage() {
       <PageHero
         label="Our Brothers"
         title="The People Who Make Alpha Zeta Home."
-        subtitle="Fourteen majors, one chapter. Meet the students building careers and friendships together at Tennessee."
+        subtitle="The faces, stories, and friendships behind Alpha Zeta."
         image={IMAGES.brotherhood}
       />
 
@@ -39,17 +39,27 @@ export default function BrothersPage() {
             <div>
               <p className="section-label">Member Directory</p>
               <h2 className="mt-4 font-display text-4xl font-medium text-foreground md:text-6xl">
-                Meet the Chapter.
+                Meet the Fall 2026 Board of Officers.
               </h2>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-              From finance to supply chain to economics — brothers interning across the country and
-              leading across campus.
+              From finance to supply chain to marketing, we have brothers interning across the country and
+              leading across campus. Listed below are our Fall 2026 Board of Officers, their major, graduation year, and LinkedIn profile. 
             </p>
           </Reveal>
           <div className="mt-14 grid grid-cols-2 gap-x-5 gap-y-10 md:grid-cols-3 lg:grid-cols-4">
             {MEMBERS.map((m, i) => (
-              <Reveal key={m.name} delay={(i % 4) * 0.07}>
+              <Reveal
+                key={m.name}
+                delay={(i % 4) * 0.07}
+                className={
+                  i === MEMBERS.length - 2
+                    ? 'lg:col-start-2'
+                    : i === MEMBERS.length - 1
+                      ? 'lg:col-start-3'
+                      : ''
+                }
+              >
                 <MemberCard member={m} />
               </Reveal>
             ))}
@@ -76,7 +86,7 @@ export default function BrothersPage() {
                     loading="lazy"
                     className="aspect-[16/9] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-plum-deep/90 via-plum-deep/20 to-transparent" />
+                  <div className="absolute inset-0 bg-plum-deep/55" />
                   <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
                     <h3 className="font-display text-2xl font-medium text-cream">{t.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-cream/75">{t.text}</p>

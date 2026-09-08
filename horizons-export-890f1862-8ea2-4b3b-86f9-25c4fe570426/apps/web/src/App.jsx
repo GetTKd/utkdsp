@@ -10,7 +10,6 @@ import ProfessionalPage from './pages/ProfessionalPage';
 import ServicePage from './pages/ServicePage';
 import RecruitmentPage from './pages/RecruitmentPage';
 import AlumniPage from './pages/AlumniPage';
-import ContactPage from './pages/ContactPage';
 
 function App() {
     return (
@@ -26,7 +25,6 @@ function App() {
                     <Route path="/service" element={<ServicePage />} />
                     <Route path="/recruitment" element={<RecruitmentPage />} />
                     <Route path="/alumni" element={<AlumniPage />} />
-                    <Route path="/contact" element={<ContactPage />} />
                     <Route path="*" element={<HomePage />} />
                 </Routes>
             </main>

@@ -1,18 +1,24 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Handshake, GraduationCap, Globe, Mic } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Reveal from '@/components/Reveal';
 import PageHero from '@/components/PageHero';
-import MemberCard from '@/components/MemberCard';
-import { IMAGES, ALUMNI, EMPLOYERS, CONTACT } from '@/data/chapter';
+import { IMAGES, CONTACT } from '@/data/chapter';
 
-const PARTNERSHIP = [
-  { icon: Mic, title: 'Speak to the Chapter', text: 'Share your career story at a professional meeting or speaker series.' },
-  { icon: Handshake, title: 'Recruit Our Brothers', text: 'Meet 87 motivated, pre-professional students before they hit the open market.' },
-  { icon: GraduationCap, title: 'Mentor the Next Class', text: 'Pair with a brother for a semester of guidance, mock interviews, and advice.' },
+const INVOLVEMENT = [
+  {
+    title: 'Share Your Experience',
+    text: 'Return to chapter for a panel, professional event, or conversation with current brothers.',
+  },
+  {
+    title: 'Connect With Brothers',
+    text: 'Offer career advice, answer questions, and help brothers navigate internships, interviews, and life after UT.',
+  },
+  {
+    title: 'Stay Part of Alpha Zeta',
+    text: 'Come back for chapter events, reconnect with brothers, and stay involved in the community beyond graduation.',
+  },
 ];
-
 
 export default function AlumniPage() {
   return (
@@ -21,118 +27,108 @@ export default function AlumniPage() {
         <title>Alumni & Corporate Partners | DSP Alpha Zeta at UTK</title>
         <meta
           name="description"
-          content="The Alpha Zeta network lasts a lifetime. Meet our alumni, see where they work, and learn how companies and graduates can partner with Delta Sigma Pi at UTK."
+          content="Graduation doesn't mean leaving Alpha Zeta behind. Learn how alumni stay connected to the chapter and current brothers."
         />
       </Helmet>
 
       <PageHero
         label="Alumni & Partners"
         title="Four Years in the Chapter. A Lifetime in the Network."
-        subtitle="Alpha Zeta alumni lead teams across the country — and keep the door open for the brothers behind them."
-        image={IMAGES.knoxville}
+        subtitle="Graduation doesn't mean leaving Alpha Zeta behind. Our alumni stay connected to the chapter, share their experiences, and help current brothers prepare for what's next."
+        image="/skyclip.png"
       />
 
-      {/* Network intro */}
+      {/* Alumni connection */}
       <section className="bg-background py-24 md:py-32">
-        <div className="mx-auto grid max-w-[90rem] gap-14 px-5 md:px-10 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-[90rem] items-center gap-14 px-5 md:px-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
           <Reveal>
-            <p className="section-label">The Lifelong Network</p>
-            <h2 className="mt-4 font-display text-3xl font-medium leading-[1.15] text-foreground md:text-5xl">
-              300,000+ brothers. One phone call away.
+            <p className="section-label">Beyond Graduation</p>
+            <h2 className="mt-4 font-display text-4xl font-medium leading-[1.05] text-foreground md:text-6xl">
+              Brotherhood Doesn't End at Graduation.
             </h2>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-              Delta Sigma Pi does not end at graduation. Our alumni hire brothers, mentor pledge
-              classes, return for homecoming, and answer the email a nervous junior sends before
-              their first big interview.
+              Alpha Zeta works to keep alumni connected long after their time at UT. Throughout the year, we create opportunities for alumni to return to the chapter, meet current brothers, share career advice, and stay involved in the brotherhood they helped build.
             </p>
           </Reveal>
-          <Reveal delay={0.15} className="grid content-center gap-8">
-            {[
-              { icon: Globe, stat: '350+', text: 'Alpha Zeta alumni across finance, consulting, tech, and entrepreneurship' },
-              { icon: GraduationCap, stat: '40+', text: 'Companies that have hired brothers in the last five years' },
-              { icon: Handshake, stat: '12', text: 'Corporate partners engaging with the chapter each year' },
-            ].map((s) => (
-              <div key={s.text} className="flex items-start gap-5 border-l-2 border-gold pl-6">
-                <s.icon className="mt-1 h-5 w-5 shrink-0 text-plum" strokeWidth={1.5} />
-                <div>
-                  <p className="font-display text-3xl font-medium text-plum">{s.stat}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
-                </div>
-              </div>
-            ))}
+          <Reveal delay={0.15}>
+            <div className="overflow-hidden rounded-sm">
+              <img
+                src="/grad.JPEG"
+                alt="Alpha Zeta brothers celebrating graduation"
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover"
+              />
+            </div>
           </Reveal>
         </div>
       </section>
 
-      {/* Alumni spotlights */}
+      {/* Alumni panel */}
       <section className="border-t border-border bg-cream py-24 md:py-32">
-        <div className="mx-auto max-w-[90rem] px-5 md:px-10">
-          <Reveal className="max-w-2xl">
-            <p className="section-label">Alumni Spotlights</p>
-            <h2 className="mt-4 font-display text-4xl font-medium text-foreground md:text-6xl">
-              Where They Are Now.
-            </h2>
+        <div className="mx-auto grid max-w-[90rem] items-center gap-14 px-5 md:px-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
+          <Reveal>
+            <div className="overflow-hidden rounded-sm">
+              <img
+                src="/alumni.JPEG"
+                alt="Alpha Zeta alumni panel"
+                loading="lazy"
+                className="aspect-[4/5] w-full object-cover"
+              />
+            </div>
           </Reveal>
-          <div className="mt-14 grid gap-x-5 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-            {ALUMNI.map((a, i) => (
-              <Reveal key={a.name} delay={i * 0.08}>
-                <MemberCard
-                  member={{
-                    ...a,
-                    major: `Class of ${a.year.replace("'", '20')}`,
-                    year: a.company,
-                    role: a.position,
-                  }}
-                />
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={0.15}>
+            <p className="section-label">Alumni Panel</p>
+            <h2 className="mt-4 font-display text-4xl font-medium leading-[1.05] text-foreground md:text-6xl">
+              Advice From Brothers Who've Been There.
+            </h2>
+            <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+              Last semester, Alpha Zeta welcomed alumni back for an alumni panel where current brothers had the opportunity to hear about their experiences after UT, career paths, and lessons they've learned along the way. Brothers were able to ask questions, hear honest advice, and connect with alumni across different stages of their careers.
+            </p>
+            <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+              Events like our alumni panel give current brothers a chance to learn from people who were once in their shoes while giving alumni a way to stay connected to Alpha Zeta.
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      {/* Partner grid */}
-      <section className="bg-plum-deep py-24 md:py-32">
-        <div className="mx-auto max-w-[90rem] px-5 md:px-10">
-          <Reveal className="max-w-2xl">
-            <p className="section-label">Corporate Partners</p>
-            <h2 className="mt-4 font-display text-4xl font-medium leading-[1.05] text-cream md:text-6xl">
-              Companies That Invest in Alpha Zeta.
-            </h2>
-          </Reveal>
-          <div className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-sm bg-plum-light/40 sm:grid-cols-3 lg:grid-cols-4">
-            {EMPLOYERS.map((e) => (
-              <div
-                key={e}
-                className="flex h-24 items-center justify-center bg-plum-deep px-4 transition-colors hover:bg-plum"
-              >
-                <p className="text-center font-display text-lg font-medium text-cream/70">{e}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Partner with us */}
+      {/* Staying involved */}
       <section className="bg-background py-24 md:py-32">
         <div className="mx-auto max-w-[90rem] px-5 md:px-10">
-          <Reveal className="max-w-2xl">
-            <p className="section-label">Get Involved</p>
+          <Reveal className="max-w-3xl">
+            <p className="section-label">Stay Connected</p>
             <h2 className="mt-4 font-display text-4xl font-medium leading-[1.05] text-foreground md:text-6xl">
-              Partner With DSP.
+              There's Always a Way Back.
             </h2>
           </Reveal>
           <div className="mt-14 grid gap-x-10 gap-y-12 md:grid-cols-3">
-            {PARTNERSHIP.map((p, i) => (
-              <Reveal key={p.title} delay={i * 0.08} className="border-t-2 border-gold pt-6">
-                <p.icon className="h-6 w-6 text-plum" strokeWidth={1.5} />
-                <h3 className="mt-4 font-display text-xl font-medium text-foreground">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
+            {INVOLVEMENT.map((item, index) => (
+              <Reveal key={item.title} delay={index * 0.08} className="border-t-2 border-gold pt-6">
+                <h3 className="font-display text-2xl font-medium text-foreground">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
               </Reveal>
             ))}
           </div>
-          <Reveal className="mt-14">
-            <a href={`mailto:${CONTACT.email}`} className="cta-arrow">
-              Partner With DSP <ArrowRight className="h-4 w-4" strokeWidth={2} />
+        </div>
+      </section>
+
+      {/* Alumni CTA */}
+      <section className="bg-plum-deep py-24 md:py-32">
+        <div className="mx-auto max-w-3xl px-5 text-center md:px-10">
+          <Reveal>
+            <p className="section-label">Alpha Zeta Alumni</p>
+            <h2 className="mt-4 font-display text-4xl font-medium leading-[1.05] text-cream md:text-6xl">
+              Once a Brother, Always a Brother.
+            </h2>
+            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-cream/75">
+              Whether you graduated last year or decades ago, we'd love to keep you connected to Alpha Zeta.
+            </p>
+            <a
+              href={CONTACT.instagram}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-10 inline-flex items-center gap-2 rounded-sm bg-gold px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase text-plum-deep transition-colors hover:bg-cream"
+            >
+              Connect With Us <ArrowRight className="h-4 w-4" strokeWidth={2} />
             </a>
           </Reveal>
         </div>
