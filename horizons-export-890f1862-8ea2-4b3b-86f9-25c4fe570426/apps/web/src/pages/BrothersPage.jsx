@@ -15,6 +15,12 @@ const TRADITIONS = [
 ];
 
 export default function BrothersPage() {
+  const renderMember = (member, index, className = '') => (
+    <Reveal key={member.name} delay={(index % 4) * 0.07} className={className}>
+      <MemberCard member={member} />
+    </Reveal>
+  );
+
   return (
     <>
       <Helmet>
@@ -48,21 +54,12 @@ export default function BrothersPage() {
             </p>
           </Reveal>
           <div className="mt-14 grid grid-cols-2 gap-x-5 gap-y-10 md:grid-cols-3 lg:grid-cols-4">
-            {MEMBERS.map((m, i) => (
-              <Reveal
-                key={m.name}
-                delay={(i % 4) * 0.07}
-                className={
-                  i === MEMBERS.length - 2
-                    ? 'lg:col-start-2'
-                    : i === MEMBERS.length - 1
-                      ? 'lg:col-start-3'
-                      : ''
-                }
-              >
-                <MemberCard member={m} />
-              </Reveal>
-            ))}
+            {MEMBERS.slice(0, -3).map((member, index) => renderMember(member, index))}
+            <div className="contents lg:col-span-4 lg:flex lg:justify-center lg:gap-5">
+              {MEMBERS.slice(-3).map((member, index) =>
+                renderMember(member, MEMBERS.length - 3 + index, 'lg:w-[calc((100%-3.75rem)/4)]'),
+              )}
+            </div>
           </div>
         </div>
       </section>

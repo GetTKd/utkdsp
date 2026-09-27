@@ -99,7 +99,7 @@ export default function Navbar() {
                       className={({ isActive }) =>
                         cn(
                           'border-b border-plum-light/60 py-3.5 text-sm font-semibold tracking-[0.15em] uppercase transition-colors',
-                          isActive ? 'text-gold' : 'text-cream/85 hover:text-gold'
+                          isActive ? 'text-gold' : 'text-cream hover:text-gold'
                         )
                       }
                     >

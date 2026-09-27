@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Linkedin } from 'lucide-react';
 import Reveal from '@/components/Reveal';
 import PageHero from '@/components/PageHero';
 import { IMAGES, CONTACT } from '@/data/chapter';
@@ -19,6 +19,16 @@ const INVOLVEMENT = [
     text: 'Come back for chapter events, reconnect with brothers, and stay involved in the community beyond graduation.',
   },
 ];
+
+const FEATURED_ALUMNUS = {
+  name: 'Ella Hicks',
+  year: '2026',
+  title: 'Finance and Controlling Graduate',
+  company: 'Red Bull Distribution Company',
+  linkedin: 'https://www.linkedin.com/in/ellahicks14/',
+  image: '/ellah.png',
+  quote: 'I graduated in May 2026 and I joined DSP my freshman year fall. While a member, I served as Senior Vice President, VP of Community Service, and the Fundraising Chair. Joining DSP set the tone for the rest of my college experience because it was where I truly found my community. Our professional events helped me secure a summer internship and the social events helped me find my people. I am currently working at Red Bull Distribution Company in their Finance & Controlling Graduate Program where I rotate across teams and gain experience with financial reporting, P&L budgeting, inventory losses, and data process improvement. I am grateful that DSP prepared me with how to dress, network, and present myself in a professional setting. Above all, I am most appreciative of the people I met through DSP that are friends I will keep by my side forever.',
+};
 
 export default function AlumniPage() {
   return (
@@ -58,6 +68,56 @@ export default function AlumniPage() {
                 loading="lazy"
                 className="aspect-[4/3] w-full object-cover"
               />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Alumni spotlight */}
+      <section className="border-t border-border bg-background py-24 md:py-32">
+        <div className="mx-auto grid max-w-[90rem] items-center gap-12 px-5 md:px-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+          <Reveal>
+            <div className="overflow-hidden rounded-sm">
+              <img
+                src={FEATURED_ALUMNUS.image}
+                alt={`${FEATURED_ALUMNUS.name}, featured Alpha Zeta alumnus`}
+                loading="lazy"
+                className="aspect-[4/5] w-full object-cover"
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <p className="section-label">Alumni Spotlight</p>
+            <h2 className="mt-4 font-display text-4xl font-medium leading-[1.05] text-foreground md:text-6xl">
+              Where Are They Now?
+            </h2>
+            <div className="mt-8 border-l-2 border-gold pl-5 md:pl-7">
+              <div className="flex items-start justify-between gap-3">
+                <p className="font-display text-2xl font-medium text-foreground md:text-3xl">
+                  {FEATURED_ALUMNUS.name}
+                </p>
+                <a
+                  href={FEATURED_ALUMNUS.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${FEATURED_ALUMNUS.name} on LinkedIn`}
+                  className="mt-1 text-muted-foreground/60 transition-colors hover:text-plum"
+                >
+                  <Linkedin className="h-5 w-5" strokeWidth={1.75} />
+                </a>
+              </div>
+              <p className="mt-2 text-sm font-semibold tracking-[0.08em] uppercase text-muted-foreground">
+                Class of {FEATURED_ALUMNUS.year}
+              </p>
+              <p className="mt-6 text-base leading-relaxed text-foreground">
+                {FEATURED_ALUMNUS.title}
+              </p>
+              <p className="mt-1 text-base italic leading-relaxed text-muted-foreground">
+                {FEATURED_ALUMNUS.company}
+              </p>
+              <blockquote className="mt-8 text-lg leading-relaxed text-muted-foreground md:text-xl">
+                “{FEATURED_ALUMNUS.quote}”
+              </blockquote>
             </div>
           </Reveal>
         </div>
