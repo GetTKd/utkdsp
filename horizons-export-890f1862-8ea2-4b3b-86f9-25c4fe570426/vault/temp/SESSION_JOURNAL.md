@@ -1210,8 +1210,8 @@
 - via: pushState
 
 ## 2026-09-03 17:42:50.422Z console.error
-- text: 
-    Warning: React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element.%s classliName classliname 
+- text:
+    Warning: React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element.%s classliName classliname
         at div
         at https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/chunk-Q4AWSQ3P.js?v=06f5ec79:43:13
         at Provider (https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/chunk-47K53FJV.js?v=06f5ec79:22:15)
@@ -1245,7 +1245,7 @@
 - url: https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/
 
 ## 2026-09-03 17:44:46.516Z console.error
-- text: 
+- text:
     Warning: React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element.%s classliName classliname 
         at div
         at https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/chunk-Q4AWSQ3P.js?v=06f5ec79:43:13
@@ -3595,7 +3595,7 @@
 
 ## 2026-09-08 19:20:44.092Z console.error
 - text: 
-    Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s PepsiCo 
+    Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s PepsiCo
         at div
         at div
         at MotionComponent (https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/framer-motion.js?v=06f5ec79:946:40)
@@ -6650,4 +6650,55 @@
         at Router (https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/react-router-dom.js?v=06f5ec79:7511:13)
         at BrowserRouter (https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/react-router-dom.js?v=06f5ec79:10816:3)
         at App
+## 2026-09-27 15:40:05.103Z load
+- url: https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/
+
+## 2026-09-27 15:40:05.769Z navigate
+- url: https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/
+- via: replaceState
+
+## 2026-09-27 15:40:05.781Z console.error
+- text: 
+    Warning: React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element.%s classliName classliname 
+    div
+    Primitive</Node<@https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/chunk-Q4AWSQ3P.js?v=06f5ec79:43:44
+    Provider@https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/chunk-47K53FJV.js?v=06f5ec79:22:47
+    Collapsible<@https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/chunk-OHJP6KTZ.js?v=06f5ec79:50:9
+    Provider@https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/chunk-47K53FJV.js?v=06f5ec79:22:47
+    AccordionItem<@https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/@radix-ui_react-accordion.js?v=06f5ec79:226:64
+    _c@https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/src/components/ui/accordion.jsx:8:8
+    div
+    MotionComponent@https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/framer-motion.js?v=06f5ec79:946:40
+    Reveal@https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/src/components/Reveal.jsx:5:16
+    div
+    Primitive</Node<@https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/chunk-Q4AWSQ3P.js?v=06f5ec79:43:44
+    createSlot/Slot2<@https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/chunk-VX2Q64OR.js?v=06f5ec79:51:38
+    createCollection/CollectionSlot<@https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/chunk-H7BI4723.js?v=06f5ec79:41:35
+    Provider@https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/chunk-47K53FJV.js?v=06f5ec79:22:47
+    AccordionImpl<@https://sturdy-space-umbrella-55qq5j4xrvx37pjq...
+
+## 2026-09-27 15:40:05.785Z console.error
+- text: 
+    Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s PepsiCo 
+    div
+    div
+    MotionComponent@https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/framer-motion.js?v=06f5ec79:946:40
+    Reveal@https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/src/components/Reveal.jsx:5:16
+    div
+    div
+    section
+    HomePage
+    RenderedRoute@https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/react-router-dom.js?v=06f5ec79:6647:23
+    Routes@https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/react-router-dom.js?v=06f5ec79:7571:16
+    main
+    Router@https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/react-router-dom.js?v=06f5ec79:7510:16
+    BrowserRouter@https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/node_modules/.vite/deps/react-router-dom.js?v=06f5ec79:10815:23
+    App
+
+## 2026-09-27 15:40:08.426Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Our Brothers"}
+
+## 2026-09-27 15:40:08.428Z navigate
+- url: https://sturdy-space-umbrella-55qq5j4xrvx37pjq-3000.app.github.dev/brothers
+- via: pushState
 

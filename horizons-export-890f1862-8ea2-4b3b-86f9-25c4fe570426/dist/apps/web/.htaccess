@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# Let Vite assets and real files load normally, then send app routes to React.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^ index.html [L]
